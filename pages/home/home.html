@@ -29,14 +29,12 @@
   <ion-input type="number" [(ngModel)]="downpayment"></ion-input>
 </ion-item>
 
-<button ion-button color= "secondary" (click)= "calculatedownpaymentamount()" (click)="calculateloanamount()" (click)="calculatemonthlypayment()"> Calculate </button>
+<button ion-button color= "secondary" (click)= "calculateloan()"> Calculate </button>
 
-<ion-item>
-  <h2> Your downpayment amount is: {{downpaymentamount}}</h2>
-</ion-item>
-<ion-item>
-  <h2> Your loan amount is: {{loanamount}} </h2>
-</ion-item>
-<ion-item>
-  <h2> Your monthly payment is: {{monthlypayment}} </h2>
+<ion-item *ngIf="downpaymentamount">
+  <h3> Your downpayment amount is:  {{downpaymentamount}}</h3>
+  <br>
+  <h4> Your loan amount is:  {{loanamount}} </h4>
+  <br>
+  <h5> Your monthly payment is:  {{monthlypayment}} </h5>
 </ion-item>

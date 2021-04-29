@@ -7,27 +7,30 @@ import {NavController } from 'ionic-angular';
   styleUrls: ['home.css']
 })
 export class HomePage {
-  price : number;
+
+  price: number;
   months: number;
   downpayment: number;
   loanamount: number;
   monthlypayment: number;
   downpaymentamount: number;
   totalinterest: number;
+  interest:number;
 
-constructor(public navCtrl: NavController) {}
+calculateloan(){
+  this.downpaymentamount=(this.price*this.downpayment)/100
+  this.downpaymentamount = parseFloat(this.downpaymentamount.toFixed(2));
+  this.loanamount=(this.price - this.downpaymentamount)
+  this.loanamount = parseFloat(this.loanamount.toFixed(2));
+  this.interest = 0.3026
+  this.totalinterest=(this.loanamount * this.interest)/100
+  this.totalinterest = parseFloat(this.totalinterest.toFixed(2));
+  this.monthlypayment=(this.loanamount + this.totalinterest)/this.months
+  this.monthlypayment = parseFloat(this.monthlypayment.toFixed(2));
 
-calculatedownpaymentamount() {
-  this.downpaymentamount=this.price*this.downpayment/100;
 }
-calculateloanamount () {
-  this.loanamount=this.price - this.downpaymentamount;
-}
-calculatetotalinterest (){
-  this.totalinterest=this.loanamount * 0.3026;
-}
-calculatemonthlypayment () {
-  this.monthlypayment=(this.loanamount + this.totalinterest)/this.months;
-}
+
+constructor(public navCtrl: NavController) {
+} 
 }
 

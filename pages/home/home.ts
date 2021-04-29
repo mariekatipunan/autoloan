@@ -7,7 +7,6 @@ import {NavController } from 'ionic-angular';
   styleUrls: ['home.css']
 })
 export class HomePage {
-  loan: number;
   price : number;
   months: number;
   downpayment: number;

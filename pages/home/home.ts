@@ -7,14 +7,14 @@ import { NavController } from 'ionic-angular';
   styleUrls: ['home.css']
 })
 export class HomePage {
-loan: number;
-price : number;
-months: number;
-downpayment: number;
-loanamount: number;
-monthlypayment: number;
-downpaymentamount: number;
-totalinterest: number;
+  loan: number;
+  price : number;
+  months: number;
+  downpayment: number;
+  loanamount: number;
+  monthlypayment: number;
+  downpaymentamount: number;
+  totalinterest: number;
 
 constructor(public navCtrl: NavController) {}
 

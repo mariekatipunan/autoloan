@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ <h1> Auto Loan Calculator </h1>
+  <p>
+    This Auto Loan calculator will give you a broad estimate on what your monthly payment will be and what the matured loan payment will be after it.
+  <p>
+    Source: https://www.bdo.com.ph/personal/loans/auto-loan/auto-loan-calculator
+  </p>
+  <img src="https://cdn.jsdelivr.net/gh/alexanderlitonjua/exams@master/car.jpg">
+  <br />
+
+  <ion-item>
+    <ion-label> Vehicle Price: </ion-label>
+    <ion-input type="number" [(ngModel)] = "price" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label> Loan Term (months): </ion-label>
+    <ion-input type="number" [(ngModel)] ="months"></ion-input>
+  </ion-item>
+
+  <ion-item>
+   <ion-label> Downpayment percentage: </ion-label>
+    <ion-input type="number" [(ngModel)] ="downpayment"></ion-input>
+  </ion-item>
+
+<button ion-button color= "secondary" (click)= "calculateLoan()">Calculate</button>
+
+<ion-item *ngIf ="downpaymentamount">
+    <h2> Your downpayment amount is: {{downpaymentamount}} </h2>
+</ion-item>
+
+<ion-item *ngIf = "loanamount">
+    <h2> Your loan amount is: {{loanamount}}  </h2>
+</ion-item>
+
+<ion-item *ngIf = "monthlypayment">
+    <h2> Your monthly payment is: {{monthlypayment}}  </h2>
+</ion-item>

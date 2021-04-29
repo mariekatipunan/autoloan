@@ -18,11 +18,17 @@ export class HomePage {
 
 constructor(public navCtrl: NavController) {}
 
-calculateloan() {
-  this.downpaymentamount=this.price*this.downpayment/100
-  this.loanamount=this.price - this.downpaymentamount
-  this.totalinterest=this.loanamount * 0.3026
-  this.monthlypayment=(this.loanamount + this.totalinterest)/this.months
-  }
+calculatedownpaymentamount() {
+  this.downpaymentamount=this.price*this.downpayment/100;
+}
+calculateloanamount () {
+  this.loanamount=this.price - this.downpaymentamount;
+}
+calculatetotalinterest (){
+  this.totalinterest=this.loanamount * 0.3026;
+}
+calculatemonthlypayment () {
+  this.monthlypayment=(this.loanamount + this.totalinterest)/this.months;
+}
 }
 

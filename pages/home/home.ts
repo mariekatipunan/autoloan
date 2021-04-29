@@ -7,7 +7,7 @@ import {NavController } from 'ionic-angular';
   styleUrls: ['home.css']
 })
 export class HomePage {
-  Loan: number;
+  loan: number;
   price : number;
   months: number;
   downpayment: number;
@@ -18,7 +18,7 @@ export class HomePage {
 
 constructor(public navCtrl: NavController) {}
 
-calculateLoan() {
+calculateloan() {
   this.downpaymentamount=this.price*this.downpayment/100
   this.loanamount=this.price - this.downpaymentamount
   this.totalinterest=this.loanamount * 0.3026
